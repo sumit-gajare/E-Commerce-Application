@@ -1,0 +1,11 @@
+@model IEnumerable<Product>
+@foreach (var product in Model)
+{
+    <div>
+        <h3>@product.Name</h3>
+        <p>@product.Description</p>
+        <p>@product.Price</p>
+        <img src="@product.ImageUrl" width="100" />
+        @Html.ActionLink("Add to Cart", "AddToCart", "Cart", new { id = product.Id }, null)
+    </div>
+}
